@@ -6,7 +6,7 @@ Whenever a new process is created, OS reserves stack and heap space for the newl
 
 ## Data Structures
 - Singly Linked list
-> To keep track of blocks which are free/in-use. We can make use of various [Memory Allocation algorithms](https://www.geeksforgeeks.org/partition-allocation-methods-in-memory-management/) to assign a block.
+> To keep track of blocks which are free/in-use. We can make use of [Memory Allocation algorithms](https://www.geeksforgeeks.org/partition-allocation-methods-in-memory-management/) to assign a block.
 
 Node definition of SLL
 ```cpp
