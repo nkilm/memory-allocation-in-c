@@ -1,16 +1,30 @@
-# Compiler - GNU's g++ or clang++
+# use GNU's g++ or clang++ to compile
 CC = clang++
-FLAGS = -Wall -Wextra -pedantic -g
+FLAGS = -O0 -W -Wall -Wextra -g
 
-SRCS = main.cpp
-TARGET = main
+all: malloc.so test-0 test-1 test-2 test-3 test-4 main
 
-all: $(TARGET)
+malloc.so: malloc.cpp
+	$(CC) $^ $(FLAGS) -o $@ -shared -fPIC
 
-$(TARGET): $(SRCS)
-	$(CC) $(FLAGS) -o $(TARGET) $(SRCS)
+test-0: tests/test-0.cpp
+	$(CC) $^ $(FLAGS) -o $@
+
+test-1: tests/test-1.cpp
+	$(CC) $^ $(FLAGS) -o $@
+
+test-2: tests/test-2.cpp
+	$(CC) $^ $(FLAGS) -o $@
+
+test-3: tests/test-3.cpp
+	$(CC) $^ $(FLAGS) -o $@
+
+test-4: tests/test-4.cpp
+	$(CC) $^ $(FLAGS) -o $@
+
+main: main.cpp
+	$(CC) $^ $(FLAGS) -o $@
 
 clean:
-	rm -f $(TARGET)
+	rm -f malloc.so test-0 test-1 test-2 test-3 test-4 main
 
-.PHONY: all clean

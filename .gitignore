@@ -9,6 +9,15 @@ main
 
 # assembly
 .s
+malloc.so
+
+# tests
+test-0
+test-1
+test-2
+test-3
+test-4
+
 
 # Ignore macOS system files
 .DS_Store
